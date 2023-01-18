@@ -1,18 +1,6 @@
 'use strict';
-/*
-console.log(document.querySelector('.message').textContent);
-document.querySelector('.message').textContent = 'Correct Number!';
 
-console.log(document.querySelector('.message').textContent);
-
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 10;
-
-document.querySelector('.guess').value = 23;
-console.log((document.querySelector('.guess').value = 23));
-*/
-
-let secretNumber = Math.trunc(Math.random() * 20) + 1; //math.random will give a no. between 0 to 19.99999.. but math,trunc will make it to 0 to 19
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
 
@@ -45,26 +33,26 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 
   //   //guess high
-  //   else if (guess > secretNumber) {
-  //     if (score > 1) {
-  //       document.querySelector('.message').textContent = 'Too high';
-  //       score = score - 1;
-  //       document.querySelector('.score').textContent = score;
-  //     } else {
-  //       document.querySelector('.message').textContent = 'You Lose';
-  //     }
-  //   }
+    else if (guess > secretNumber) {
+      if (score > 1) {
+        document.querySelector('.message').textContent = 'Too high';
+        score = score - 1;
+        document.querySelector('.score').textContent = score;
+      } else {
+        document.querySelector('.message').textContent = 'You Lose';
+      }
+    }
 
   //   //guess low
-  //   else if (guess < secretNumber) {
-  //     if (score > 1) {
-  //       document.querySelector('.message').textContent = 'Too low';
-  //       score = score - 1;
-  //       document.querySelector('.score').textContent = score;
-  //     } else {
-  //       document.querySelector('.message').textContent = 'You Lose';
-  //     }
-  //   }
+    else if (guess < secretNumber) {
+      if (score > 1) {
+        document.querySelector('.message').textContent = 'Too low';
+        score = score - 1;
+        document.querySelector('.score').textContent = score;
+      } else {
+        document.querySelector('.message').textContent = 'You Lose';
+      }
+    }
 
   //when guess is wrong
   else if (guess != secretNumber) {
@@ -91,4 +79,3 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').style.width = '15rem';
 });
 
-//Problem - after correct guess also check button works and score keeps decresing
